@@ -24,9 +24,18 @@
     - `use crate_name:: {moduleA, moduleB}`
 
 
-## How to pars?
+## How to parse?
 - Example Code: [str_parse_f.rs](./str_parse_f.rs)
     ```rust
     // convert the string to float example.
     let number = s.parse::<f64>.expect("Converting Failed.");
+    ```
+- Exception Handling Code (Reuslt) [parse_result_exception_handling.rs](./parse_result_exception_handling.rs)
+    ```rust
+    let number = s.parse::<f64>();
+    // Handling Result type.
+    match number {
+        Ok(Result) => println!("Your number is {}", Result),
+        Err(e) => println("Please input the correct number e: {}", e)
+    }
     ```
