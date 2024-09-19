@@ -22,3 +22,11 @@
     - `use crate_name::module`
     - `use crate_name::module1::module1-1`
     - `use crate_name:: {moduleA, moduleB}`
+
+
+## How to pars?
+- Example Code: [str_parse_f.rs](./str_parse_f.rs)
+    ```rust
+    // convert the string to float example.
+    let number = s.parse::<f64>.expect("Converting Failed.");
+    ```
