@@ -62,3 +62,17 @@ expression: `let mut variable_name: HashMap<KeyType, ValueType> = HashMap::new()
         None => println!("The key {} does not exists in map.", key);
     }
     ```
+
+## Arguments
+- [sum_args.rs](./sum_args.rs): Get the sum of the input arguments.
+    ```rust
+    let args = std::env::args(); // Get the environment from std::env
+    //...
+        let number: f64 = match s.parse() {
+            Ok(n) => n,
+            Err(e) => {
+                println!("Please input a correct number: {}", e);
+                0.0
+            }
+        };
+    ```
