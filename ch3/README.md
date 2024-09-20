@@ -28,3 +28,40 @@ Borrow a reference to a value. Borrowing allows you to use data without taking o
         - Normal Structure Example: [struct_bmi.rs](./struct_bmi.rs)
 
 - __Slice__: Refer the parts of the value(from variable_name n to m index: `&variable_name[n..m]` ex: )
+
+## String Type: String and &str
+- String and &str
+    - `String`: Owned, heap-allocated, mutable, growable string.
+    - `&str`: Borrowed, immutable reference to a string slice, more lightweight, but cannot be modified.
+
+- Difference with C/C++
+    - C ends with `'\0'`, mark as ends of string.
+    - Rust store lenght and capacity.
+
+- Example:
+    - Str Shadowing: Keep the origianl string as immutable.
+        ```rust
+        fn main() {
+            let s = "Rust is fantastic!";
+            let s = s.replace("fantastic", "great"); // shadowing orignal value.
+            println!("{}", s);
+        }
+        ```
+
+## Cargo Test
+Example: [my_struct/src/lib.rs](./mytest_struct/src/lib.rs)
+- To compare the struct use `PartialEq`
+    ```rust
+    #[derive(Debug, PartialEq)] // Derive the PartialEq and Debug traits
+    struct GItem {
+        name: String,
+        price: i64,
+    }
+    ...
+    #[test] // Indicates this is the test function.
+    fn test_gitem() {
+        ...
+        assert_eq!(item1, item2); // assert two item is equal.
+        assert_ne!(item1, item2); // assert two item is not eaqual.
+    }
+    ```

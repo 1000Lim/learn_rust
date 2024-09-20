@@ -1,7 +1,7 @@
 struct Body {
-    weight: f64,
+    weight: f64, // struct field seperated by comma
     height: f64,
-}
+} // struct ends with a curly brace without a semicolon
 
 fn calc_bmi(body: &Body) -> f64 {
     body.weight / (body.height / 100.0).powi(2)
