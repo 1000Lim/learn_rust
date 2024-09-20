@@ -76,3 +76,37 @@ expression: `let mut variable_name: HashMap<KeyType, ValueType> = HashMap::new()
             }
         };
     ```
+
+## File Handling
+- [fizbuzz_file.rs](./fizzbuzz_file.rs)
+    ```rust
+    use std::fs::File;
+    use std::io::{Write, BufWriter};
+    let fp = File::create(file_name); // create file
+    let mut writer = BufWriter::new(fp);
+    ```
+- Recurisvely search directory: [mytree.rs](./mytree.rs)
+
+
+## Exceptio Handling
+- `unwrap_or`
+    ```rust
+    let text = fs::read_to_stirng("example.txt").unwrap_or("Failed Value".tostring());
+    ```
+
+- `match`
+    ```rust
+    let text = match fs::read_to_stirng("example.txt") {
+        Ok(text) => text,
+        Err(_)=>return
+    }
+    ```
+
+- `if let`
+    ```rust
+    if let Ok(s) = fs::read_to_stirng("example.txt") {
+        println!("{}", s)
+    } else {
+        println!("Error while reading exmample.txt")
+    }
+    ```
