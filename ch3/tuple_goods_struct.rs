@@ -1,4 +1,4 @@
-struct Item(String, f64);
+struct Item(String, f64); // Tuple struct
 
 fn main() {
     let banana = Item("Banana".to_string(), 1.0);
