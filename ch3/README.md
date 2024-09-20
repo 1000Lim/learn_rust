@@ -25,3 +25,6 @@ Borrow a reference to a value. Borrowing allows you to use data without taking o
     println!("{}, {}", var.0, var.1);
     ```
     - Define Structure with Tuple: `struct {struct_name} ({type1}, {type2}...)`(ex: [tuple_goods_struct.rs](./tuple_goods_struct.rs))
+        - Normal Structure Example: [struct_bmi.rs](./struct_bmi.rs)
+
+- __Slice__: Refer the parts of the value(from variable_name n to m index: `&variable_name[n..m]` ex: )
