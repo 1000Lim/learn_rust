@@ -57,3 +57,19 @@ impl trait_name{
 }
 ```
 - example_code: [trait_trasurebox.rs](./trait_trasurebox.rs)
+
+## Generic
+Generic Features:
+- Generics allow for abstract, reusable code that works with different types while maintaining compile-time type safety.
+- Use generics in functions, structs, enums, and traits.
+- Rust's generics are monomorphized, meaning that they have no runtime performance overhead.
+- Trait bounds allow us to restrict the types that can be used with generics, ensuring they meet specific criteria (e.g., implementing certain traits).
+    ```rust
+    // print_largest should've implment the std::fmt::Display trait.
+    fn print_largest<T: PartialOrd + std::fmt::Display>(list: &[T]) {
+        let largest = largest(list);
+        println!("The largest is: {}", largest);
+    }
+    ```
+
+Example code: [structure_method_generics.rs](./structure_method_generics.rs)
