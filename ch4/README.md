@@ -73,3 +73,23 @@ Generic Features:
     ```
 
 Example code: [structure_method_generics.rs](./structure_method_generics.rs)
+
+
+## Iterator
+Iterator Method.
+| Method        | Description                           |
+|---            |---                                    |
+|iter           | No ownership transfer return (&T)     |
+|iter_mut       | No ownership transfer return (&mut T) |
+|into_iter      | Ownership transfer (T)                |
+
+## Iterator Trait
+- Iterator Trait Syntax:
+    ```rust
+    trait Iterator{
+        type Item;
+        fn next(&mut self) -> Option<Self::Item>;
+
+    }
+    ```
+- Interator Trait Example Code: [iter_fib.rs](./iter_fib.rs)
