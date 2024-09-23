@@ -141,3 +141,27 @@ enum enum_name {
     }
     ```
     - further example: [match_bmi.rs](./match_bmi.rs)
+
+## Rust Module, Crate and Package
+
+## Module (One Scope)
+Unit of Scope: A module is a way to organize code within a crate. Modules allow you to group related functions, structs, enums, constants, and other items into a namespace, helping to prevent name collisions and making the codebase more manageable.
+
+|   Description         | Example                       |
+|   ---                 |   ---                         |
+| From the top          | use crate::aaa::bbb;          |
+| From the parent       | use super::eee;               |
+| Use the alias         | use aaa::bb::print as b_print;|
+| Use multiple modules  | use aaa::{bbb, ccc};          |
+| Use all from module   | use aaa::*;
+
+- module example code: [rand](./rand/src/main.rs) package.
+
+### Crate (Represents Tree structure of module)
+A crate is the smallest compilation unit in Rust.
+- Binary Crate: Generates an executable program. It must have a main function(`main.rs`).
+- Library Crate: Generates a reusable library, which other crates can depend on(`lib.rs`).
+
+
+## Package (Multiple Crates)
+A package is a collection of one or more crates that are managed together using Cargo, Rust's build system and package manager. A package is defined by a Cargo.toml file, which specifies metadata, dependencies, and other configuration options.
