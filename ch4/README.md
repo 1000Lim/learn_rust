@@ -93,3 +93,51 @@ Iterator Method.
     }
     ```
 - Interator Trait Example Code: [iter_fib.rs](./iter_fib.rs)
+
+## Enum and Pattern Matching
+### Syntax for the enum type (without type)
+```rust
+// Define trait_name
+enum enum_name {
+    value1, 
+    value2, 
+    value3,
+    //...
+}
+
+// User the defined enum
+let variable1 = enum_name::value1;
+let variable2 = enum_name::value2;
+```
+
+### Syntax for the enum (with type)
+```rust
+enum enum_name {
+    value1(data_type),
+    value2(data_type),
+    value3(data_type),
+    //...
+}
+```
+
+### Pattern Matching
+- Normal Match Example
+    ```rust
+    // fizzbuzz code
+    match (i%3, i%5) {
+        (0, 0) => println!("FizzBuzz"),
+        (0, _) => println!("Fizz"),
+        (_, 0) => println!("Buzz"),
+        _ => println!("{}", i),  // otherwise, print number.
+    }
+    ```
+- __Match Guard__: add `if` after condition matching
+    ```rust
+    let msg = number match {
+        n if n % 15 == 0 => "FizzBuzz".to_string(),
+        n if n % 3 == 0 => "Fizz".to_string(),
+        n if n % 5 == 0 => "Buzz".to_string(),
+        _ => format!("{}", i), // use format to make a format string.
+    }
+    ```
+    - further example: [match_bmi.rs](./match_bmi.rs)
