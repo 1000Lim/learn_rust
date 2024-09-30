@@ -32,3 +32,16 @@ let img2 = imageops::crop(&mut imag, heigh, length, filter).to_image()
     ```rust
     use std::sync::mpsc;
     ```
+
+- Startup non-blocking server.
+```rust
+let server = TcpListener::bind("127.0.0.1:8888").unwrap(); // bind address to the TCP Listener.
+// non-blocking mode.
+server.set_nonblocking(true).unwrap();
+
+// matching server Ok or Error.
+match server.accept(){
+    Ok((socket, addr)) => println!("Connection success:  {:?}", addr),
+    Err(e) => println!("Failed to access server: {:?},", e)
+}
+```
