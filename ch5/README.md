@@ -45,3 +45,26 @@ match server.accept(){
     Err(e) => println!("Failed to access server: {:?},", e)
 }
 ```
+
+
+Rust Backend frameworkd
+- [__Actix Web__](https://actix.rs/docs/application) : The most mature and widely used framework in the Rust.
+    - Key features:
+        - High performance and low-latency.
+        - Asynchronous (based on tokio).
+        - Support for both HTTP/1 and HTTP/2.
+        - Middleware support (e.g., logging, security, etc.).
+        - WebSocket support.
+        - Strong ecosystem with integrations for databases, authentication, and more.
+    - Example Code: [web_hello](./web_hello/)
+
+-  [__Axum__](./https://docs.rs/axum/latest/axum/) Axum is a relatively newer framework compared to Actix Web, but it has quickly gained popularity due to its simplicity, ease of use, and deep integration with the tokio async runtime and hyper (Rust's core HTTP library).
+    - Key Features:
+        - Asynchronous (built on tokio and hyper).
+        - Simple and declarative routing system.
+        - Middleware support.
+        - Support for WebSockets.
+        - Extensible via tower, a set of composable middleware and services.
+        - Tight integration with tokio, hyper, and tower.
+        - Usage: Axum is often used for building APIs and microservices with a focus on ergonomics and developer productivity.
+    - Example code: [axum_hello](./axum_hello/)
